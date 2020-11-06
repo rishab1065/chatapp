@@ -51,13 +51,19 @@ export default function Chat() {
         </div>
       </div>
       <div className="chat_footer">
-        <div className="chat_message_input_container">
-          <input
-            value={userInput}
-            className="chat_message_input"
-            placeholder={'Type message'}
-            onChange={(event) => setUserInput(event.target.value)}
-          />
+        <div className="chat_message_footer">
+          <div className="chat_message_input_container">
+            <input
+              value={userInput}
+              className="chat_message_input"
+              placeholder={'Type message'}
+              onChange={(event) => setUserInput(event.target.value)}
+            />
+            <div className="image_input_container">
+              <i className="material-icons">{'camera_alt'}</i>
+              <input type="file" className="image-input" accept="image/*" />
+            </div>
+          </div>
           <div
             className="chat_send_button"
             onClick={() => {

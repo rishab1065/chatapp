@@ -1,5 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import './Chat.css';
+import useIsOnline from '../../../customHooks/useIsOnlineHook';
+
 const onMessage = () => {
   return new Promise((resolve) => {
     setTimeout(() => {
@@ -15,7 +17,7 @@ export default function Chat() {
   const [messages, setMessages] = useState([]);
   const [userInput, setUserInput] = useState('');
   const messageContainerRef = useRef(null);
-
+  const isOnline = useIsOnline(navigator.onLine);
   const scrollToBottom = () => {
     messageContainerRef.current.scrollIntoView({
       behavior: 'smooth',
@@ -57,6 +59,7 @@ export default function Chat() {
               value={userInput}
               className="chat_message_input"
               placeholder={'Type message'}
+              disabled={!isOnline}
               onChange={(event) => setUserInput(event.target.value)}
             />
             <div className="image_input_container">
@@ -67,7 +70,7 @@ export default function Chat() {
           <div
             className="chat_send_button"
             onClick={() => {
-              if (!userInput) return;
+              if (!userInput || !isOnline) return;
               const newMessage = [...messages];
               newMessage.push({ type: 'right', text: userInput });
               setMessages(newMessage);

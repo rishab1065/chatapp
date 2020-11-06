@@ -1,0 +1,11 @@
+.tabs {
+  height: 100%;
+}
+
+.tab_content {
+  background-color: white;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

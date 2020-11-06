@@ -1,0 +1,28 @@
+.tab_bar {
+  display: flex;
+}
+.tab {
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  background-color: #212f3e;
+  color: white;
+  text-transform: uppercase;
+  font-size: 1em;
+  font-weight: 600;
+  flex-direction: column;
+  padding: 0.5em;
+}
+.tab.selected {
+  background-color: #eebb26;
+  color: #212f3e;
+}
+.icon {
+  font-size: 1.2em;
+  padding: 0.5em;
+  color: white;
+}
+.icon > path {
+  fill: red;
+}

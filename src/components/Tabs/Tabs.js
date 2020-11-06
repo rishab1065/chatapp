@@ -1,11 +1,16 @@
 import React, { useState } from 'react';
 import Tabbar from './Tabbar';
+import Chat from './Chat';
 import './Tabs.css';
 
 function getSelectedTabContent(selectedTab) {
   switch (selectedTab) {
     case 0:
-      return <div className="tab_content">Chat</div>;
+      return (
+        <div className="tab_content">
+          <Chat />
+        </div>
+      );
     case 1:
       return <div className="tab_content">My Jobs</div>;
     case 2:

@@ -12,7 +12,7 @@ export default function Tabbar(props) {
             onClick={() => setSelectedTab(index)}
             key={index}
           >
-            <i class="material-icons">{tab.icon}</i>
+            <i className="material-icons">{tab.icon}</i>
             {tab.name}
           </div>
         );

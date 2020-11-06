@@ -1,12 +1,10 @@
 .tabs {
-  display: flex;
-  flex-direction: column;
-  flex: 1;
+  height: calc(100% - 71px);
 }
 
 .tab_content {
   background-color: white;
-  height: 100%;
+  height: calc(100% - 38px);
   display: flex;
   justify-content: center;
   align-items: center;
